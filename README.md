@@ -1,10 +1,10 @@
-# Node.js/TypeScript GraphQL API with Prisma
+# Node.js/TypeScript with Prisma
 
-This is a modern Node.js/TypeScript project using GraphQL and Prisma ORM.
+This is a modern Node.js/TypeScript project using Prisma ORM.
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
 
 ## Setup
@@ -25,8 +25,6 @@ npm run prisma:migrate
 npm run dev
 ```
 
-The GraphQL playground will be available at http://localhost:4000/graphql
-
 ## Available Scripts
 
 - `npm run dev`: Start the development server with hot-reload
@@ -39,8 +37,5 @@ The GraphQL playground will be available at http://localhost:4000/graphql
 ## Project Structure
 
 - `src/`: Source code directory
-  - `schema/`: GraphQL schema definitions
-  - `resolvers/`: GraphQL resolvers
-  - `models/`: Data models and business logic
 - `prisma/`: Prisma schema and migrations
 - `dist/`: Compiled JavaScript files 
