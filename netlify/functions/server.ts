@@ -10,13 +10,6 @@ import path from 'path';
 const app = express();
 const prisma = new PrismaClient();
 
-// Set EJS as templating engine with absolute path
-app.set('view engine', 'ejs');
-app.set('views', '/var/task/views');  // Updated path
-
-// Serve static files
-app.use(express.static('/var/task/views/public'));  // Updated path
-
 // Middleware
 app.use(express.json());
 
