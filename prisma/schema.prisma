@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model doctors {
+  id              Int              @id @default(autoincrement())
+  name            String           @db.VarChar(100)
+  email           String           @unique
+  phone           String           @unique
+  specialization  String           @db.VarChar(100)
+  departmentId    Int?
+  department      departments?     @relation("DoctorDepartment", fields: [departmentId], references: [id])
+  departmentHead  departments[]    @relation("DepartmentHead")
+  appointments    appointments[]
+  prescriptions   prescriptions[]
+  doctorClinics   doctor_clinics[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model patients {
+  id              Int              @id @default(autoincrement())
+  name            String           @db.VarChar(100)
+  dob             DateTime
+  phone           String           @unique
+  email           String?          @unique
+  address         String
+  emergencyContact String          @db.VarChar(100)
+  emergencyPhone  String
+  appointments    appointments[]
+  prescriptions   prescriptions[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model appointments {
+  id              Int              @id @default(autoincrement())
+  doctorId        Int
+  patientId       Int
+  appointmentDate DateTime
+  diagnosis       String?
+  treatmentPlan   String?
+  doctor          doctors          @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  patient         patients         @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model prescriptions {
+  id                  Int              @id @default(autoincrement())
+  patientId           Int
+  doctorId            Int
+  medicationName      String           @db.VarChar(100)
+  dosage              String           @db.VarChar(50)
+  frequency           String           @db.VarChar(50)
+  prescriptionDate    DateTime
+  prescriptionEndDate DateTime?
+  doctor              doctors          @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  patient             patients         @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+}
+
+model clinics {
+  id              Int              @id @default(autoincrement())
+  name            String           @db.VarChar(100)
+  address         String
+  phone           String           @unique
+  doctorClinics   doctor_clinics[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model doctor_clinics {
+  doctorId         Int
+  clinicId         Int
+  consultationDays String           @db.VarChar(100)
+  consultationHours String          @db.VarChar(50)
+  doctor           doctors          @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  clinic           clinics          @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  @@id([doctorId, clinicId])
+}
+
+model departments {
+  id              Int              @id @default(autoincrement())
+  name            String           @db.VarChar(100)
+  location        String
+  headDoctorId    Int?
+  headDoctor      doctors?         @relation("DepartmentHead", fields: [headDoctorId], references: [id], onDelete: SetNull)
+  doctors         doctors[]        @relation("DoctorDepartment")
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
