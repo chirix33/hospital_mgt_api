@@ -10,12 +10,12 @@ import path from 'path';
 const app = express();
 const prisma = new PrismaClient();
 
-// Update the views path to point to the correct location in the serverless environment
+// Set EJS as templating engine with absolute path
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views')); // Changed from '../../views'
+app.set('views', '/var/task/views');  // Updated path
 
-// Update the static files path as well
-app.use(express.static(path.join(__dirname, '/views/public')));
+// Serve static files
+app.use(express.static('/var/task/views/public'));  // Updated path
 
 // Middleware
 app.use(express.json());
