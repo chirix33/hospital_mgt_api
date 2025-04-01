@@ -1,6 +1,6 @@
 # Node.js/TypeScript with Prisma
 
-This is a modern Node.js/TypeScript project using Prisma ORM.
+This is a modern Node.js/TypeScript project using Prisma ORM. This is project for my Spring 2025 Back End Development Class, under the instruction of  [Professor Raj Krishnan (Microsoft)](https://www.linkedin.com/in/raj-krishnan).
 
 ## Prerequisites
 
