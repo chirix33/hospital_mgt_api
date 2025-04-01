@@ -1,0 +1,52 @@
+{
+    "meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2025-03-28",
+        "results": {
+            "skip": 0,
+            "limit": 1,
+            "total": 32
+        }
+    },
+    "results": [
+        {
+            "spl_product_data_elements": [
+                "Allergena Zone 7 Kids Echinacea,Baptisia tinctoria, Hydrastis canadensis, Myrrha, Nasturtium aquaticum, Phytolacca decandra, Trigonella foenum-graecum, Zone 7 Tree, Zone 7 Weed, Zone 7 Grass WATER GLYCERIN ECHINACEA, UNSPECIFIED ECHINACEA, UNSPECIFIED BAPTISIA TINCTORIA ROOT BAPTISIA TINCTORIA ROOT GOLDENSEAL GOLDENSEAL MYRRH MYRRH NASTURTIUM OFFICINALE NASTURTIUM OFFICINALE PHYTOLACCA AMERICANA ROOT PHYTOLACCA AMERICANA ROOT FENUGREEK LEAF FENUGREEK LEAF ALNUS INCANA SUBSP. RUGOSA POLLEN ALNUS INCANA SUBSP. RUGOSA POLLEN FRAXINUS AMERICANA POLLEN FRAXINUS AMERICANA POLLEN POPULUS TREMULOIDES POLLEN POPULUS TREMULOIDES POLLEN FAGUS GRANDIFOLIA POLLEN FAGUS GRANDIFOLIA POLLEN BETULA NIGRA POLLEN BETULA NIGRA POLLEN JUNIPERUS ASHEI POLLEN JUNIPERUS ASHEI POLLEN JUNIPERUS VIRGINIANA POLLEN JUNIPERUS VIRGINIANA POLLEN POPULUS DELTOIDES SUBSP. MONILIFERA POLLEN POPULUS DELTOIDES SUBSP. MONILIFERA POLLEN ACER NEGUNDO POLLEN ACER NEGUNDO POLLEN ULMUS PUMILA POLLEN ULMUS PUMILA POLLEN CELTIS OCCIDENTALIS POLLEN CELTIS OCCIDENTALIS POLLEN CARYA ALBA POLLEN CARYA ALBA POLLEN JUNIPERUS SCOPULORUM POLLEN JUNIPERUS SCOPULORUM POLLEN ACER SACCHARUM POLLEN ACER SACCHARUM POLLEN MORUS RUBRA POLLEN MORUS RUBRA POLLEN MORUS ALBA POLLEN MORUS ALBA POLLEN QUERCUS VIRGINIANA POLLEN QUERCUS VIRGINIANA POLLEN PINUS STROBUS POLLEN PINUS STROBUS POLLEN POPULUS NIGRA POLLEN POPULUS NIGRA POLLEN POPULUS ALBA POLLEN POPULUS ALBA POLLEN LIGUSTRUM VULGARE POLLEN LIGUSTRUM VULGARE POLLEN PICEA PUNGENS POLLEN PICEA PUNGENS POLLEN LIQUIDAMBAR STYRACIFLUA POLLEN LIQUIDAMBAR STYRACIFLUA POLLEN PLATANUS OCCIDENTALIS POLLEN PLATANUS OCCIDENTALIS POLLEN AILANTHUS ALTISSIMA POLLEN AILANTHUS ALTISSIMA POLLEN JUGLANS NIGRA POLLEN JUGLANS NIGRA POLLEN SALIX NIGRA POLLEN SALIX NIGRA POLLEN AMARANTHUS PALMERI POLLEN AMARANTHUS PALMERI POLLEN XANTHIUM STRUMARIUM POLLEN XANTHIUM STRUMARIUM POLLEN BASSIA SCOPARIA POLLEN BASSIA SCOPARIA POLLEN SOLIDAGO CANADENSIS POLLEN SOLIDAGO CANADENSIS POLLEN CHENOPODIUM ALBUM POLLEN CHENOPODIUM ALBUM POLLEN CYCLACHAENA XANTHIFOLIA POLLEN CYCLACHAENA XANTHIFOLIA POLLEN AMARANTHUS RETROFLEXUS POLLEN AMARANTHUS RETROFLEXUS POLLEN AMARANTHUS SPINOSUS POLLEN AMARANTHUS SPINOSUS POLLEN PLANTAGO LANCEOLATA POLLEN PLANTAGO LANCEOLATA POLLEN URTICA DIOICA POLLEN URTICA DIOICA POLLEN AMBROSIA ACANTHICARPA POLLEN AMBROSIA ACANTHICARPA POLLEN AMBROSIA TRIFIDA POLLEN AMBROSIA TRIFIDA POLLEN AMBROSIA ARTEMISIIFOLIA POLLEN AMBROSIA ARTEMISIIFOLIA POLLEN AMBROSIA PSILOSTACHYA POLLEN AMBROSIA PSILOSTACHYA POLLEN ARTEMISIA TRIDENTATA POLLEN ARTEMISIA TRIDENTATA POLLEN ARTEMISIA LUDOVICIANA POLLEN ARTEMISIA LUDOVICIANA POLLEN ATRIPLEX CONFERTIFOLIA POLLEN ATRIPLEX CONFERTIFOLIA POLLEN RUMEX ACETOSELLA POLLEN RUMEX ACETOSELLA POLLEN SALSOLA TRAGUS POLLEN SALSOLA TRAGUS POLLEN AMARANTHUS TUBERCULATUS POLLEN AMARANTHUS TUBERCULATUS POLLEN ATRIPLEX CANESCENS POLLEN ATRIPLEX CANESCENS POLLEN ARTEMISIA ABSINTHIUM POLLEN ARTEMISIA ABSINTHIUM POLLEN POA ANNUA POLLEN POA ANNUA POLLEN BROMUS INERMIS POLLEN BROMUS INERMIS POLLEN PHALARIS ARUNDINACEA POLLEN PHALARIS ARUNDINACEA POLLEN ZEA MAYS POLLEN ZEA MAYS POLLEN SORGHUM HALEPENSE POLLEN SORGHUM HALEPENSE POLLEN KOELERIA MACRANTHA POLLEN KOELERIA MACRANTHA POLLEN FESTUCA PRATENSIS POLLEN FESTUCA PRATENSIS POLLEN AVENA SATIVA POLLEN AVENA SATIVA POLLEN DACTYLIS GLOMERATA POLLEN DACTYLIS GLOMERATA POLLEN LOLIUM PERENNE POLLEN LOLIUM PERENNE POLLEN AGROSTIS GIGANTEA POLLEN AGROSTIS GIGANTEA POLLEN LOLIUM MULTIFLORUM POLLEN LOLIUM MULTIFLORUM POLLEN SORGHUM X DRUMMONDII POLLEN SORGHUM X DRUMMONDII POLLEN PHLEUM PRATENSE POLLEN PHLEUM PRATENSE POLLEN TRITICUM AESTIVUM POLLEN TRITICUM AESTIVUM POLLEN PASCOPYRUM SMITHII POLLEN PASCOPYRUM SMITHII POLLEN"
+            ],
+            "active_ingredient": [
+                "Active Ingredients: Echinacea 3X HPUS; Drainage Remedies: Baptisia tinctoria 3X HPUS, Hydrastis canadensis 3X HPUS, Myrrha 3X HPUS, Nasturtium aquaticum 3X HPUS, Phytolacca decandra 3X HPUS, Trigonella foenum-graecum 3X; *Zone 7 Tree 6X, 12X, 30X: *Zone 7 Weed 6X, 12X, 30X: *Zone 7 Grass 6X, 12X, 30X."
+            ],
+            "purpose": [
+                "Purpose: Relief from Sneezing, Runny Nose, Itchy Eyes and Sinus Congestion."
+            ],
+            "indications_and_usage": [
+                "Use: This product is a Homeopathic Dilution formulated to support the body's immunity for the temporary relief of allergies."
+            ],
+            "keep_out_of_reach_of_children": [
+                "Keep Out of Reach of Children. In case of overdose, get medical help or contact a Poison Control Center right away."
+            ],
+            "warnings": [
+                "Warnings: Use Only as directed. Stop use and ask a doctor if symptoms worsen or do not improve after 5 days. If pregnant or breast-feeding , consult a health professional before use."
+            ],
+            "dosage_and_administration": [
+                "Directions: •Shake Well Before Use.• Children (11 and Younger) take 6 drops under the tongue three times daily or as directed by your health care professional.• Consult a Physician for use in children under 12 years of age."
+            ],
+            "other_safety_information": [
+                "Other Information: Do not use if TAMPER EVIDENT seal around neck of bottle is missing or broken."
+            ],
+            "inactive_ingredient": [
+                "Inactive Ingredients: USP Purified Water and Vegetable Glycerin."
+            ],
+            "package_label_principal_display_panel": [
+                "*Proprietary Ingredients: Zone 7 Trees, Weeds and Grasses contain up to 66 allergens specific to Zone 7 region. For a complete list of allergens visit www.allergena.com Manufactured for Progena Professional Formulations 4820 Eubank Blvd. NE, ABQ, NM 87111, www.progena.com image of label"
+            ],
+            "set_id": "100a1156-fd3b-4be7-af4d-23ff1a9692d8",
+            "id": "2cf5eb4b-4919-b229-e063-6394a90a796f",
+            "effective_time": "20250130",
+            "version": "2",
+            "openfda": {}
+        }
+    ]
+}

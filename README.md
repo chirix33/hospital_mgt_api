@@ -39,3 +39,52 @@ npm run dev
 - `src/`: Source code directory
 - `prisma/`: Prisma schema and migrations
 - `dist/`: Compiled JavaScript files 
+
+## External API Integration
+
+This project integrates with the FDA (Food and Drug Administration) API to provide drug information. The integration is implemented through the `/pharmacy` endpoint.
+
+### FDA API Endpoint
+
+The application uses the FDA's Drug Labeling API to fetch detailed information about medications. The endpoint is:
+```
+https://api.fda.gov/drug/label.json
+```
+
+### Usage
+
+To query drug information, make a POST request to `/pharmacy` with the following parameters:
+- Request Body (JSON):
+  ```json
+  {
+    "name": "aspirin"
+  }
+  ```
+- Query Parameters:
+  - `limit`: (Optional) Number of results to return (default: 1)
+
+Example request:
+```bash
+curl -X POST "http://localhost:3000/pharmacy?limit=1" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "aspirin"}'
+```
+
+### Response Format
+
+The API returns detailed drug information including:
+- Active ingredients
+- Purpose
+- Indications and usage
+- Warnings
+- Dosage and administration
+- Safety information
+- Package labeling
+
+### Important Notes
+
+1. The FDA API is a public API and does not require authentication for basic usage
+2. Rate limits may apply based on FDA's terms of service
+3. The data returned is for informational purposes only and should not be used as a substitute for professional medical advice
+
+For more information about the FDA API, visit: https://open.fda.gov/apis/drug/label/ 

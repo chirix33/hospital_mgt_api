@@ -46,3 +46,8 @@ export interface Department {
     location: string;
     headDoctorId?: number;
 }
+
+export interface Drug {
+    name: string;
+    limit?: number;
+}

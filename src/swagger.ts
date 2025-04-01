@@ -92,6 +92,51 @@ const options: swaggerJsdoc.Options = {
           },
           required: ['doctorId', 'clinicId', 'consultationDays', 'consultationHours'],
         },
+        Pharmacy: {
+          type: 'object',
+          properties: {
+            meta: {
+              type: 'object',
+              properties: {
+                disclaimer: { type: 'string' },
+                terms: { type: 'string' },
+                license: { type: 'string' },
+                last_updated: { type: 'string', format: 'date' },
+                results: {
+                  type: 'object',
+                  properties: {
+                    skip: { type: 'integer' },
+                    limit: { type: 'integer' },
+                    total: { type: 'integer' }
+                  }
+                }
+              }
+            },
+            results: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  spl_product_data_elements: { type: 'array', items: { type: 'string' } },
+                  active_ingredient: { type: 'array', items: { type: 'string' } },
+                  purpose: { type: 'array', items: { type: 'string' } },
+                  indications_and_usage: { type: 'array', items: { type: 'string' } },
+                  keep_out_of_reach_of_children: { type: 'array', items: { type: 'string' } },
+                  warnings: { type: 'array', items: { type: 'string' } },
+                  dosage_and_administration: { type: 'array', items: { type: 'string' } },
+                  other_safety_information: { type: 'array', items: { type: 'string' } },
+                  inactive_ingredient: { type: 'array', items: { type: 'string' } },
+                  package_label_principal_display_panel: { type: 'array', items: { type: 'string' } },
+                  set_id: { type: 'string' },
+                  id: { type: 'string' },
+                  effective_time: { type: 'string' },
+                  version: { type: 'string' },
+                  openfda: { type: 'object' }
+                }
+              }
+            }
+          }
+        }
       },
     },
   },

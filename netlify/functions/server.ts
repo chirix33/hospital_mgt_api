@@ -1,5 +1,5 @@
 import express, { Request, Response, RequestHandler } from 'express';
-import { Doctor, Patient, Appointment, Prescription, Clinic, Department } from "../../lib/interfaces";
+import { Doctor, Patient, Appointment, Prescription, Clinic, Department, Drug } from "../../lib/interfaces";
 import { Handler } from '@netlify/functions';
 import serverless from 'serverless-http';
 import { PrismaClient } from '@prisma/client';
@@ -506,6 +506,52 @@ app.get("/doctors", (async (req: Request, res: Response) => {
       res.status(400).json({ error: "Failed to associate doctor with clinic" });
     }
   }) as RequestHandler);
+
+  /**
+ * @swagger
+ * /pharmacy:
+ *   post:
+ *     summary: Get pharmacy information from FDA API
+ *     tags: [Pharmacy]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The active ingredient or drug name to search for
+ *                 example: aspirin
+ *             required:
+ *               - name
+ *     responses:
+ *       201:
+ *         description: Pharmacy information retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Pharmacy'
+ *       400:
+ *         description: Invalid input or error fetching drug data
+ */
+app.post("/pharmacy", (async (req: Request, res: Response) => {
+  const drugData: Drug = req.body;
+  const limit = isNaN(Number(req.query.limit)) ? 1 : Number(req.query.limit);
+  try {
+    // Make a request to https://api.fda.gov/drug/label.json
+    const response = await fetch(`https://api.fda.gov/drug/label.json?search=active_ingredient:${drugData.name}&limit=${limit}`);
+    if (!response.ok) {
+      res.status(400).json({ error: "Failed to fetch drug data" });
+      return;
+    }
+    const data = await response.json();
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(400).json({ error: "Failed to get medication information" });
+  }
+}) as RequestHandler);
 
 // Swagger UI setup
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));

@@ -1,5 +1,6 @@
 // Import necessary modules
 import express, { Request, Response, RequestHandler } from "express";
+import { Doctor, Patient, Appointment, Prescription, Clinic, Department, Drug } from "../lib/interfaces";
 import { PrismaClient } from "@prisma/client";
 import swaggerUi from "swagger-ui-express";
 import { specs } from "./swagger";
@@ -26,55 +27,6 @@ app.get('/', (req, res) => {
 
 // Swagger UI setup
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
-
-// Types
-interface Doctor {
-  name: string;
-  email: string;
-  phone: string;
-  specialization: string;
-  departmentId?: number;
-}
-
-interface Patient {
-  name: string;
-  dob: Date;
-  phone: string;
-  email?: string;
-  address: string;
-  emergencyContact: string;
-  emergencyPhone: string;
-}
-
-interface Appointment {
-  doctorId: number;
-  patientId: number;
-  appointmentDate: Date;
-  diagnosis?: string;
-  treatmentPlan?: string;
-}
-
-interface Prescription {
-  patientId: number;
-  doctorId: number;
-  medicationName: string;
-  dosage: string;
-  frequency: string;
-  prescriptionDate: Date;
-  prescriptionEndDate?: Date;
-}
-
-interface Clinic {
-  name: string;
-  address: string;
-  phone: string;
-}
-
-interface Department {
-  name: string;
-  location: string;
-  headDoctorId?: number;
-}
 
 // Doctor Routes
 /**
@@ -296,6 +248,52 @@ app.delete("/patients/:id", (async (req: Request, res: Response) => {
     res.json({ message: "Patient deleted" });
   } catch (error) {
     res.status(400).json({ error: "Failed to delete patient" });
+  }
+}) as RequestHandler);
+
+/**
+ * @swagger
+ * /pharmacy:
+ *   post:
+ *     summary: Get pharmacy information from FDA API
+ *     tags: [Pharmacy]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The active ingredient or drug name to search for
+ *                 example: aspirin
+ *             required:
+ *               - name
+ *     responses:
+ *       201:
+ *         description: Pharmacy information retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Pharmacy'
+ *       400:
+ *         description: Invalid input or error fetching drug data
+ */
+app.post("/pharmacy", (async (req: Request, res: Response) => {
+  const drugData: Drug = req.body;
+  const limit = isNaN(Number(req.query.limit)) ? 1 : Number(req.query.limit);
+  try {
+    // Make a request to https://api.fda.gov/drug/label.json
+    const response = await fetch(`https://api.fda.gov/drug/label.json?search=active_ingredient:${drugData.name}&limit=${limit}`);
+    if (!response.ok) {
+      res.status(400).json({ error: "Failed to fetch drug data" });
+      return;
+    }
+    const data = await response.json();
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(400).json({ error: "Failed to get medication information" });
   }
 }) as RequestHandler);
 
