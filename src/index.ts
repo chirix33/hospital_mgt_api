@@ -8,7 +8,7 @@ import path from 'path';
 
 const app = express();
 const prisma = new PrismaClient();
-const port = 3000;
+const port = process.env.PORT || 4000;
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
