@@ -2,7 +2,7 @@
   "name": "assignment-3",
   "version": "1.0.0",
   "description": "Node.js/TypeScript project with GraphQL and Prisma ORM",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "start": "node dist/src/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
