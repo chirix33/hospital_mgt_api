@@ -12,10 +12,10 @@ const port = process.env.PORT || 4000;
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '../views/public')));
+app.use(express.static(path.join(__dirname, 'views/public')));
 
 // Middleware
 app.use(express.json());
